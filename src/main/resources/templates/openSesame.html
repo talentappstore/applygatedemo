@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Open Sesame!</title>
+  </head>
+
+  <body>
+
+<h1>Welcome!</h1>
+
+<p>You've arrived at the applygatetest app (installed at tenant <b><span th:text="${tenant}">tenant</span></b>),
+for job <b><span th:text="${job}">job</span></b>,
+with relayPage <b><span th:text="${relayPage}">relayPage</span></b>. 
+</p>
+
+<p>Click <a th:href="@{/tenant/{tenant}/showQualifyPage/{job}(relayPage=${relayPage},tenant=${tenant},job=${job})}">here</a> to satisfy the gate (and be redirected back to the
+job, with the apply button now showing).
+</p>
+
+<p>In this example, the link above leads to an endpoint that makes an API call to fetch a satisfy link, then immediately redirects the user to that link.
+Normally the endpoint would instead put the user through some kind of online experience (e.g. a quiz), only redirecting them if they "passed".
+</p>
+
+</body>
+
+</html>
